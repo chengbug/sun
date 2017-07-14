@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.section{
+    overflow: hidden;
+    position: relative;
+}
+/*开头菜单的样式*/
+#menu{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    list-style: none;
+    z-index: 10;
+}
+#menu li{
+    float: left;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+}
+#menu a{
+    float: left;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+}
+#menu .active a{
+    color: #fff;
+    background: #333;
+}
+/*第一屏幕开始*/
+.first .author{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    left: 50%;
+    background-size: cover;
+   background-image: url("../imgs/011.png");
+    transition: all 0.5s;
+}
+.first .author:hover{
+    transform:rotateY(360deg)
+}
+.first img:hover{
+    transform: rotateY(90deg);
+}
+.first .paopao{
+    width: 870px;
+    height: 200px;
+    border-radius: 15px;
+    margin:50px auto ;
+    background: url(../imgs/paopao.png) no-repeat left top,url(../imgs/paopao.png)no-repeat right bottom ;
+    font-size: 100px;
+    color: darkslategrey;
+    line-height: 200px;
+    text-align: center;
+    transition: background 1s;
+}
+.paopao:hover{
+  background-position: left bottom,right top;
+}
+/*第二屏幕开始*/
+.second p{
+    width:200px;
+    height: 20px;
+    font-size: 30px;
+    margin-left:50px;
+    display: inline-block;
+    position: relative;
+    animation: wenzi 10s linear alternate;
+
+}
+.second .img{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+.second .img::before,
+.second .img::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: url("../imgs/007.png");
+    background-size:100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+.tupian{
+    width: 100px;
+    height: 100px;
+    background: url("../imgs/111.gif");
+    background-size: 100%;
+    border-radius: 50%;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    box-shadow: 2px 1px 24px 5px #0020ff;
+}
+.second .img::after{
+   /*  left: 250px;*/
+    background:url("../imgs/003.png")no-repeat;
+    transition:transform 1s;
+    transform-origin:bottom;
+    background-size:100%
+}
+.second .img:hover::after{
+    transform: rotateX(-180deg);
+
+}
+.second .rocket{
+    position: absolute;
+    bottom: -300px;
+    left:100px;
+    width: 204px;
+    height: 204px;
+    background: url("../imgs/rocket.png");
+}
+.second.current .rocket{
+    transform:translate(190px,-700px);
+    transition:transform 2s;
+}
+/*第二屏幕动画*/
+@keyframes wenzi {
+    0%{
+       transform:scale(1);
+       opacity: 0;
+    }
+    100%{
+        transform:scale(1.2);
+        opacity: 1;
+    }
+}
+/*第三屏幕 掌握机能开始*/
+.third .banner{
+    width: 100%;
+    height: 350px;
+    background-color: #5abb00;
+    position: relative;
+}
+.third .banner-center{
+    width: 980px;
+    height: 350px;
+    position: relative;
+}
+.banner-center span {
+    width: 100px;
+    height: 100px;
+    display: block;
+    background: url("../imgs/yun01.png") no-repeat;
+    background-size: 100px 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    float: left;
+    position: absolute;
+}
+span:nth-child(1){
+    left: 300px;
+    top: 80px;
+    animation: yunduo 5s linear infinite;
+}
+span:nth-child(2){
+    left:200px ;
+    top: 50px;
+    animation: yunduo 5s linear 0.5s infinite;
+}
+span:nth-child(3){
+    top: 70px;
+    animation: yunduo 5s ease-in-out infinite;
+}
+span:nth-child(4){
+    top: 70px;
+    right: 100px;
+    animation: yunduo 5s ease-in infinite;
+}
+span:nth-child(5){
+    top: 70px;
+    left: 800px;
+   animation: haha 5s ease-in infinite;
+}
+span:nth-child(6){
+    top: 70px;
+    left: 1000px;
+    animation: haha 5s ease-in infinite;
+}
+.gougou::before{
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: url("../imgs/gou.png");
+    background-size: 100%;
+    border-radius: 20%;
+    top: 171px;
+    left: 100px;
+}
+.yan {
+    position: absolute;
+    background: url(../imgs/555.gif) no-repeat;
+    width:150px;
+    height: 150px;
+    background-size: 100%;
+    border-radius: 50%;
+    top: 118px;
+    left: 60%;
+    box-shadow:7px 4px 33px 23px gold inset;
+}
+.tingzi{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.xiaoma1{
+    position: absolute;
+    top: 362px;
+    left: 457px;
+    animation: mama 1s ease-in-out infinite alternate;
+}
+.xiaoma2{
+    position: absolute;
+    top: 362px;
+    left:569px;
+    z-index: 2;
+    animation:mama 1s ease-in-out 0.5s infinite alternate ;
+}
+.xiaoma3{
+    position: absolute;
+    top: 362px;
+    left:719px;
+    animation: mama 1s ease-in-out 0.6s infinite alternate;
+}
+.xiaoma4{
+    position: absolute;
+    top:446px;
+    left:202px;
+}
+.xiaoma5{
+    position: absolute;
+    top:494px;
+    left:521px;
+    z-index: 100000;
+}
+.xiaoma6{
+    position: absolute;
+    top:494px;
+    left:721px;
+    z-index: 100000;
+}
+.xinxin{
+    left:440px;
+    top:10px;
+    position: absolute;
+    animation: xinxin 1.5s linear infinite alternate;
+}
+/*第三屏动画*/
+/*左边云朵*/
+@keyframes yunduo {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(1200px);
+    }
+}
+/*马儿*/
+@keyframes mama {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100px);
+    }
+}
+/*右边两个云*/
+@keyframes haha {
+    0%{
+        transform:translateX(0)
+    }
+    100%{
+        transform: translateX(-1200px);
+    }
+}
+/*星星动画坏*/
+@keyframes xinxin {
+    0%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    40%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+/*第四屏*/
+.box{
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    background: url("../imgs/008.png")no-repeat;
+    background-size: 100%;
+    margin: 100px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-62deg) rotateY(30deg);
+}
+.fourth span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 60px;
+    line-height: 300px;
+    left: 0;
+    top: 0;
+    color: rgba(0,0,0,0.7);
+}
+.left{
+    background-color: blue;
+    transform: translateX(-50%) rotateY(-90deg);
+}
+.right{
+    background-color: greenyellow;
+    transform: translateX(50%) rotateY(90deg);
+}
+ .foward{
+    background-color: pink;
+    transform: translateZ(150px);
+}
+ .back{
+    background-color: purple;
+    transform:translateZ(-150px);
+}
+ .top{
+    background-color: #5CADFF;
+    transform:  translateY(-50%) rotateX(90deg);
+}
+ .bottom{
+    background-color: gold;
+    transform: translateY(50%) rotateX(90deg);
+}
+
+.bye1
+{
+    width: 300px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 30px;
+    position: absolute;
+    right:39px;
+    bottom: 50px;
+    color:green;
+}
+
+.bye2
+{
+    width: 300px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 30px;
+    position: absolute;
+    right:25px;
+    bottom: 150px;
+    color:green;
+}
+/*#bye{
+    animate-delay: 5s;
+}*/
+.zhiwen{
+    position: absolute;
+    background: url(../imgs/222.gif)no-repeat;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: 100%;
+    right:100px;
+    bottom: 100px;
+}
+.mao{
+    position: absolute;
+    background: url("../imgs/666.gif") no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    left: 50%;
+    bottom: 0;
+    box-shadow: 2px 8px 54px 45px #f90 inset;
+}

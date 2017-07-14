@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>求职简历</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/animate.min.css"/>
+</head>
+<body>
+<ul id="menu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">欢迎阅读</a></li>
+    <li data-menuanchor="page2"><a href="#page2">自我介绍</a></li>
+    <li data-menuanchor="page3"><a href="#page3">掌握技能</a></li>
+    <li data-menuanchor="page4"><a href="#page4">未来展望</a></li>
+</ul>
+<div id="dowebok">
+    <div class="section first">
+        <h1 class="author"></h1>
+        <div class="paopao animated infinite flash">老板好!!!</div>
+        <!--<h3>第一屏</h3>-->
+    </div>
+    <div class="section second">
+        <!--<h3>第二屏</h3>-->
+        <div class="rocket"></div>
+        <div class="img"></div>
+        <p>晨光，是一支笔</p>
+        <p>陈光，生于1993年,本科学历，社会工作专业</p>
+        <p>我要成为一名前端工作人员</p>
+        <p>邮箱：1125651183@qq.com</p>
+        <div class="tupian"></div>
+    </div>
+    <div class="section third">
+        <div class="banner">
+        <div class="banner-center">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+            <span>jquery</span>
+            <span>ajax</span>
+            <span>流行框架</span>
+            <div class="yan"></div>
+            <div class="gougou animated zoomInDown infinite"></div>
+            <img src="imgs/xing01.gif" alt="" class="xinxin"/>
+            <img src="imgs/tingzi.png" alt="" class="tingzi"/>
+            <img src="imgs/xiaoma01.png" alt="" class="xiaoma1"/>
+            <img src="imgs/xiaoma02.png" alt="" class="xiaoma2"/>
+            <img src="imgs/xiaoma03.png" alt="" class="xiaoma3"/>
+            <img src="imgs/xiaoma04.png" alt="" class="xiaoma4 animated lightSpeedIn infinite"/>
+            <img src="imgs/xiaoma05.png" alt="" class="xiaoma5 animated lightSpeedIn infinite"/>
+            <img src="imgs/xiaoma06.png" alt="" class="xiaoma6  animated lightSpeedIn infinite"/>
+        </div>
+        </div>
+       <!-- <h3>第三屏</h3>-->
+    </div>
+    <div class="section fourth">
+        <div class="box">
+            <span class="top">加油</span>
+            <span class="bottom">加油</span>
+            <span class="left">钻研</span>
+            <span class="right">学习</span>
+            <span class="foward">前</span>
+            <span class="back">努力</span>
+        </div>
+        <div class="bye1 animated hinge infinite">谢谢阅读</div>
+        <div class="bye2 animated hinge infinite">大佬,给碗饭吃吧</div>
+
+       <div class="zhiwen"></div>
+        <div class="mao"></div>
+    </div>
+</div>
+<!--引入插件文件-->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+    $("#dowebok").fullpage({
+        sectionsColor:["#1bbc9b","#4BBFC3","#7BAABE","#f90"],
+        anchors:["page1","page2","page3","page4"],
+        menu:"#menu",
+        continuousVertical: true,
+        afterLoad:function(link,index){
+            $('.section').removeClass('current');
+            //代码的目的 让第一屏刷新时有动画
+            setTimeout(function(){
+                $('.section').eq(index-1).addClass('current');
+            },100);
+        }
+});
+ setInterval(function(){
+        $.fn.fullpage.moveSectionDown();
+    },6000)
+});
+
+</script>
+</body>
+</html>
